@@ -1,4 +1,4 @@
-import {getUniqLanguages} from "/public/projectsENUM.js";
+import {getUniqLanguages} from "/public/projectsMOKUP.js";
 import {Button} from "antd";
 
 export default function LanguagesBTNS({ onLangClick }) {

@@ -1,20 +1,33 @@
-import {getProjectByLanguage} from "/public/projectsENUM.js";
-import {Button, Modal} from "antd";
+import {getProjectByLanguage} from "/public/projectsMOKUP.js";
+import "./Style.css";
+
+import { Modal, List, Tag, Typography, Space, Divider } from "antd";
+
+const { Title, Text } = Typography;
 
 export default function CriarLanguagesModal({ lang, onClose }) {
-    const projetos = getProjectByLanguage(lang);
-    console.log(projetos);
+    const projetos = getProjectByLanguage(lang)
     return (
-        <Modal open={true} onCancel={onClose} footer={null} title={`Projetos em ${lang}`}>
-            <ul>
-                {projetos.map(proj => (
-                    <li key={proj.name}>
-                        <strong>{proj.name}</strong>: {proj.description}
-                        <Button type="text">{proj.languagues}</Button>
-                        <Button type="text">{proj.framework}</Button>
-                    </li>
-                ))}
-            </ul>
+        <Modal
+            open={true}
+            onCancel={onClose}
+            footer={null}
+            title={`Projetos em ${lang}`}
+        >
+            <List
+                dataSource={projetos}
+                renderItem={(proj) => (
+                    <>
+                        <List.Item>
+                            <List.Item.Meta
+                                title={<Title level={5}>{proj.name}</Title>}
+
+                                description={<Text type="secondary">{proj.description}</Text>}
+                            />
+                        </List.Item>
+                    </>
+                )}
+            />
         </Modal>
     );
 }
