@@ -1,74 +1,76 @@
 import { getProjectByLanguage } from "/public/projectsMOKUP.js";
 import "./Style.css";
 
-import {Modal, List, Tag, Typography, Space, Card, Flex, Divider} from "antd";
+import {Modal, List,  Typography,  Card, Flex, Tag, Space, } from "antd";
 import { GithubOutlined  } from "@ant-design/icons";
 import Link from "antd/es/typography/Link.js";
 
-const { Text, Title } = Typography;
+const { Text,Paragraph, Title } = Typography;
 
 export default function CriarLanguagesModal({ lang, onClose }) {
     const projetos = getProjectByLanguage(lang);
 
-    const ProjectTags = ({  items}) =>
-        items?.length > 0 && (
-            <Space  wrap >
-                {items.map((i) => (
-                    <Tag key={i} >
-                        {i}
-                    </Tag>
-                ))}
-            </Space>
-        );
+    console.log(projetos);
+    
+  return (
+    <Modal
+      open={!!lang} // Abre se existir uma linguagem
+      onCancel={onClose}
+      footer={null}
+      centered
+      width={700}
+      destroyOnHidden // Limpa o estado ao fechar
+      title={
+        <Title level={3} style={{ margin: 0 }}>
+          Projetos com <span style={{ color: '#1890ff' }}>{lang}</span>
+        </Title>
+      }
+    >
+      <List
+        dataSource={projetos}
+        locale={{ emptyText: <Text>Nenhum projeto encontrado para {lang}.</Text> }}
+        renderItem={(proj) => (
+          <List.Item style={{ padding: "12px 0" }}>
+            <Card hoverable style={{ width: "100%", borderRadius: '8px' }}>
+              <Flex vertical gap="small">
+                <Flex justify="space-between" align="center">
+                  {/* Removido o 'strong' do Divider que causava erro */}
+                  <div style={{ fontSize: '18px', fontWeight: 'bold', borderBottom: '1px solid #f0f0f0', width: '100%', marginBottom: '8px' }}>
+                    {proj.name}
+                  </div>
+                  <Link href={proj.repoLink} target="_blank">
+                    <GithubOutlined style={{ fontSize: '22px', marginLeft: '12px' }} />
+                  </Link>
+                </Flex>
 
-    return (
-        <Modal
-            open
-            onCancel={onClose}
-            footer={null}
-            centered
-            width={650}
-            title={<Title style={{fontSize:"4"}}>Projetos que utilizam {lang}</Title>}
-        >
-            <List
-                dataSource={projetos}
-                locale={{ emptyText: <Text>Nenhum projeto encontrado utilizando {lang}.</Text> }}
-                renderItem={(proj) => (
-                    <List.Item style={{ padding: 0, borderBottom: "none" }}>
-                        <Card style={{ width: "100%"}}>
-                            <Flex vertical >
-                                <Flex justify={"space-between"} horizontal align={"center"}>
-                                    <Divider strong orientation={"start"} style={{ fontSize: 18 }}>
-                                        {proj.name}
-                                    </Divider>
-                                        <Link
-                                            href={proj.repoLink}
-                                            target="_blank"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            <GithubOutlined />
-                                        </Link>
+                <Paragraph type="secondary">{proj.description}</Paragraph>
 
-                                </Flex>
-                                <Text type="secondary">{proj.description}</Text>
 
-                                <Text strong >Tecnologias utilizadas:</Text>
-                                <Flex horrizontal style={{ marginTop: 10 }}>
-                                    <ProjectTags
-                                        items={proj.languagues}
-                                        color="blue"
-                                    />
-                                    <ProjectTags
-                                        items={proj.framework}
-                                        color="green"
-                                    />
-                                </Flex>
-                            </Flex>
-                        </Card>
+               <Flex vertical gap="small">
+      <Typography.Text strong>Stacks e Tecnologias:</Typography.Text>
+      
+      <Space size={[0, 8]} wrap>
+        {/* Mapeamento direto das Linguagens */}
+        {proj.languages?.map((l) => (
+          <Tag color="processing" key={l} bordered={false}>
+            {l}
+          </Tag>
+        ))}
 
-                    </List.Item>
-                )}
-            />
-        </Modal>
-    );
+        {/* Mapeando os Frameworks */}
+        {proj.framework?.map((f) => (
+          <Tag color="success" key={f} bordered={false}>
+            {f}
+          </Tag>
+        ))}
+      </Space>
+    </Flex> 
+            
+              </Flex>
+            </Card>
+          </List.Item>
+        )}
+      />
+    </Modal>
+  ); 
 }
