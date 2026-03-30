@@ -10,7 +10,6 @@ const { Text,Paragraph, Title } = Typography;
 export default function CriarLanguagesModal({ lang, onClose }) {
     const projetos = getProjectByLanguage(lang);
 
-    console.log(projetos);
     
   return (
     <Modal
