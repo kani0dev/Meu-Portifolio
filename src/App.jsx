@@ -18,12 +18,16 @@ function App() {
         Kani0dev <text type="secondary" style={{ fontsize: '18px', fontweight: 'normal' }}>| Allan Chagas</text>
       </Title>
       
-      <Divider />
 
+      <Divider />
       <Aboutme/>
 
         <Title level={2}>
-          Projetos
+          Projetos em destaque
+        </Title>
+
+        <Title level={2}>
+          Projetos por linguagem
         </Title>
       
       <Space size="middle" wrap>
