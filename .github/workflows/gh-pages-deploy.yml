@@ -22,4 +22,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - name: Configure git user
+        run: |
+          git config user.name kani0dev
+          git config user.email allanchagasilva@gmail.com
       - run: npm run deploy
