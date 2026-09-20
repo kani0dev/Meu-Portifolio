@@ -1,4 +1,4 @@
-import { Flex, Space, Typography } from "antd";
+import { Divider, Flex, Space, Typography } from "antd";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -7,12 +7,14 @@ const Resume = () =>{
     <Flex
     justify="center"
     align="center"
-    style={{width:'50%'}}
+    vertical
     >
+        <Divider size="small"/>
         <Typography>
-            <Paragraph
-            
-            >
+            <Title level={5}> 
+                sobre min
+            </Title>
+            <Paragraph>
                 Sou desenvolvedor e eterno estudante, com foco em Java e Python e
                 experiência Full Stack.
                 Gosto de transformar problemas em soluções, explorando trade-offs,
@@ -21,7 +23,7 @@ const Resume = () =>{
                 Sou uma pessoa proativa, ensinável e bastante envolvida com a comunidade de programação.
             </Paragraph>
         </Typography>
-        </Flex>        
+    </Flex>        
     )
 }
 export default Resume;

@@ -1,4 +1,6 @@
 import { Typography, Badge, Flex, Space, Divider } from 'antd';
+import Resume from './Resume';
+
 
 const { Text, Link } = Typography;
 
@@ -10,16 +12,13 @@ const infos = [
   { label: 'E-mail',      value: 'allanchagasilva@gmail.com',               href: 'mailto:allanchagas@email.com' },
 ];
 
+
 export default function InfoSection() {
   return (
     <Flex
-    justify='space-evenly'
     vertical
     >
-      <Space/>
-
-      {/* Título */}
-      <Text
+        <Text
         style={{
           fontSize: 11,
           fontWeight: 600,
@@ -31,24 +30,41 @@ export default function InfoSection() {
         Informações 
       </Text>
 
-      {/* Linhas */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        {infos.map(({ label, value, href }) => (
-          <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'baseline' }}>
-            <Text style={{ minWidth: 90, fontSize: 13, color: '#6b7280' }}>
-              {label}
+      <Flex 
+      vertical
+      gap={8}
+      >
+      {infos.map(({ label, value, href }) => (
+          <Flex 
+          key={label}
+          gap={12}
+          align="baseline"
+          justify='space-between'
+          >
+            <Text style={{ 
+              minWidth: 90,
+              fontSize: 13,
+              color: '#6b7280'
+              }}>
+                {label}
             </Text>
+
             {href ? (
-              <Link href={href} target="_blank" style={{ fontSize: 14 }}>
+              <Link 
+              href={href} 
+              target="_blank" 
+              style={{ fontSize: 14 }}>
                 {value}
               </Link>
             ) : (
               <Text style={{ fontSize: 14 }}>{value}</Text>
             )}
-          </div>
+          </Flex>
         ))}
-      </div>
-      <Space/>
+      </Flex>
+        
+      <Resume/>
+ 
     </Flex>
   );
 }

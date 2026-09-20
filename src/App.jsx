@@ -2,35 +2,32 @@
 import './App.css'
 import LanguagesBTNS from "./assets/componets/LanguagesSection/btn/LinguagemsBTN.jsx";
 import CriarLanguagesModal from './assets/componets/LanguagesSection/modal/LanguagesModal.jsx';
-import { useState } from "react";
 import { Typography, Divider, Space, Card, Flex } from 'antd';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
+import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
 
 const { Title, Paragraph, Text } = Typography;
 
 function App() {
-  const [selectedLang, setSelectedLang] = useState(null);
 
  return (
-    <Flex
-      align='center'
-      justify='center'
-      vertical
-    >
+  <Flex
+  justify='center'
+  align='start
+  '
+  vertical
+  >
+
         <Aboutme/>
 
-
-        <Space size="middle" wrap>
-          <LanguagesBTNS onLangClick={setSelectedLang} />
-        </Space>
+        <Title 
+        level={5}
         
-        {selectedLang && (<CriarLanguagesModal 
-        lang={selectedLang} 
-          onClose={() => setSelectedLang(null)}
-        />)}
-
-      <Divider size='2'/>
-    </Flex>
+        >
+          projetos por linguagens
+        </Title>
+        <ProjectLangContainer/>
+  </Flex>
   );
 }; 
 
