@@ -2,7 +2,7 @@
 import './App.css'
 import LanguagesBTNS from "./assets/componets/LanguagesSection/btn/LinguagemsBTN.jsx";
 import CriarLanguagesModal from './assets/componets/LanguagesSection/modal/LanguagesModal.jsx';
-import { Typography, Divider, Space, Card, Flex } from 'antd';
+import { Typography, Divider, Space, Card, Flex, Row, Col } from 'antd';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
 
@@ -11,23 +11,32 @@ const { Title, Paragraph, Text } = Typography;
 function App() {
 
  return (
-  <Flex
-  justify='center'
-  align='start
-  '
-  vertical
+  <Row
+  align="middle"
   >
-
+    <Col
+    span={6}
+    />
+    <Col 
+      span={12}
+    >
+      <Flex
+      vertical
+      >
         <Aboutme/>
-
-        <Title 
-        level={5}
-        
-        >
+        <Title level={5}>
+          Projetos em destaques
+        </Title>
+        <Title level={5}>
           projetos por linguagens
         </Title>
         <ProjectLangContainer/>
-  </Flex>
+      </Flex>
+    </Col>
+    <Col
+    span={6}
+    />
+  </Row>
   );
 }; 
 
