@@ -19,11 +19,10 @@ function App() {
     >
         <Aboutme/>
 
-        <Divider size='1'/>
 
-      <Space size="middle" wrap>
-        <LanguagesBTNS onLangClick={setSelectedLang} />
-      </Space>
+        <Space size="middle" wrap>
+          <LanguagesBTNS onLangClick={setSelectedLang} />
+        </Space>
         
         {selectedLang && (<CriarLanguagesModal 
         lang={selectedLang} 
@@ -31,7 +30,6 @@ function App() {
         />)}
 
       <Divider size='2'/>
-
     </Flex>
   );
 }; 

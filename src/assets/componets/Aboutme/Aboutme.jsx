@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Typography, Divider, Space, Card } from 'antd';
+import { Typography, Divider, Space, Card, Flex } from 'antd';
 import { 
   RocketOutlined, 
   CodeOutlined, 
@@ -14,15 +14,24 @@ const { Title, Paragraph, Text } = Typography;
 
 const Aboutme = () => {
   return (
-  <>
-      <Title level={1} style={{ marginbottom: 0 }}>
-        Kani0dev <text type="secondary" style={{ fontsize: '18px', fontweight: 'normal' }}>| Allan Chagas</text>
-      </Title>
-      <InfoSection/>
-      <Divider/>
-      <Resume/>
-
-  </>
+  <Space>
+    <Flex
+    align='center'
+    vertical
+    >
+        <Title
+        level={1}
+        style={{ marginbottom: 0 }}
+        >
+        Allan Chagas | kani0dev
+        </Title>
+        <InfoSection/>
+        <Divider
+          size='large'
+        />
+        <Resume/>
+    </Flex>
+  </Space>
   );
 };
 

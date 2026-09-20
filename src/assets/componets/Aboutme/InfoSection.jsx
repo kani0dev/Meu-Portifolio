@@ -1,4 +1,4 @@
-import { Typography, Badge } from 'antd';
+import { Typography, Badge, Flex, Space, Divider } from 'antd';
 
 const { Text, Link } = Typography;
 
@@ -12,7 +12,11 @@ const infos = [
 
 export default function InfoSection() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <Flex
+    justify='space-evenly'
+    vertical
+    >
+      <Space/>
 
       {/* Título */}
       <Text
@@ -44,6 +48,7 @@ export default function InfoSection() {
           </div>
         ))}
       </div>
-    </div>
+      <Space/>
+    </Flex>
   );
 }
