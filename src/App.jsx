@@ -4,8 +4,7 @@ import LanguagesBTNS from "./assets/componets/LanguagesSection/btn/LinguagemsBTN
 import CriarLanguagesModal from './assets/componets/LanguagesSection/modal/LanguagesModal.jsx';
 import { useState } from "react";
 import { Typography, Divider, Space, Card } from 'antd';
-import InfoSection from './assets/componets/InfoSection.jsx';
-import Aboutme from './assets/componets/Aboutme.jsx';
+import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -14,22 +13,8 @@ function App() {
 
  return (
     <div style={{ padding: '24px', maxWidth: '800px', margin: '0 auto' }}>
-      <Title level={1} style={{ marginbottom: 0 }}>
-        Kani0dev <text type="secondary" style={{ fontsize: '18px', fontweight: 'normal' }}>| Allan Chagas</text>
-      </Title>
-      
+        <Aboutme/>
 
-      <Divider />
-      <Aboutme/>
-
-        <Title level={2}>
-          Projetos em destaque
-        </Title>
-
-        <Title level={2}>
-          Projetos por linguagem
-        </Title>
-      
       <Space size="middle" wrap>
         <LanguagesBTNS onLangClick={setSelectedLang} />
       </Space>
@@ -41,7 +26,6 @@ function App() {
 
       <Divider size='2'/>
 
-      <InfoSection/>
     </div>
   );
 }; 

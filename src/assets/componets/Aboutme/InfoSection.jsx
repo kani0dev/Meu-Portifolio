@@ -48,16 +48,6 @@ export default function InfoSection() {
       {/* Divider manual */}
       <div style={{ borderTop: '1px solid #e5e7eb', margin: '4px 0' }} />
 
-      {/* Disponibilidade */}
-      <Badge
-        color="#16a34a"
-        text={
-          <Text style={{ color: '#16a34a', fontWeight: 500, fontSize: 13 }}>
-            Disponível para oportunidades
-          </Text>
-        }
-      />
-
     </div>
   );
 }
