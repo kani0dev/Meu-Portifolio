@@ -3,8 +3,8 @@ import { Typography, Badge } from 'antd';
 const { Text, Link } = Typography;
 
 const infos = [
-  { label: 'Formação',    value: 'DSM — FATEC (em andamento)', link: false },
-  { label: 'Localização', value: 'São Paulo, SP',               link: false },
+  { label: 'Formação',    value: 'DSM — FATEC (em andamento) conclução em 2027', link: false },
+  { label: 'Localização', value: 'Ferraz de Vasconcelos, SP',               link: false },
   { label: 'GitHub',      value: 'github.com/Kani0Dev',         href: 'https://github.com/Kani0Dev' },
   { label: 'LinkedIn',    value: 'linkedin.com/in/Alan-Chagas', href: 'https://linkedin.com/in/alan-chagas-675189374' },
   { label: 'E-mail',      value: 'allanchagasilva@gmail.com',               href: 'mailto:allanchagas@email.com' },
@@ -24,7 +24,7 @@ export default function InfoSection() {
           color: '#6b7280',
         }}
       >
-        Informações
+        Informações 
       </Text>
 
       {/* Linhas */}
@@ -44,10 +44,6 @@ export default function InfoSection() {
           </div>
         ))}
       </div>
-
-      {/* Divider manual */}
-      <div style={{ borderTop: '1px solid #e5e7eb', margin: '4px 0' }} />
-
     </div>
   );
 }
