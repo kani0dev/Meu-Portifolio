@@ -5,6 +5,7 @@ import CriarLanguagesModal from './assets/componets/LanguagesSection/modal/Langu
 import { Typography, Divider, Space, Card, Flex, Row, Col } from 'antd';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
+import ProjectCard from './assets/componets/ProjectsSection/ProjectCard.jsx';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -24,11 +25,9 @@ function App() {
       vertical
       >
         <Aboutme/>
+        
         <Title level={5}>
-          Projetos em destaques
-        </Title>
-        <Title level={5}>
-          projetos por linguagens
+          meus projetos
         </Title>
         <ProjectLangContainer/>
       </Flex>

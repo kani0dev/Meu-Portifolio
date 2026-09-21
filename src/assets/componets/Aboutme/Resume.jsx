@@ -5,8 +5,7 @@ const { Title, Paragraph, Text } = Typography;
 const Resume = () =>{
     return(
     <Flex
-    justify="center"
-    align="center"
+    align="start"
     vertical
     >
         <Divider size="small"/>
@@ -15,12 +14,7 @@ const Resume = () =>{
                 sobre min
             </Title>
             <Paragraph>
-                Sou desenvolvedor e eterno estudante, com foco em Java e Python e
-                experiência Full Stack.
-                Gosto de transformar problemas em soluções, explorando trade-offs,
-                desenvolvendo minhas próprias ideias e levando projetos da implementação ao deploy.
-                Tenho experiência com Spring, FastAPI, React, React Native e AWS, além de interesse em IoT e análise de dados.
-                Sou uma pessoa proativa, ensinável e bastante envolvida com a comunidade de programação.
+                sla
             </Paragraph>
         </Typography>
     </Flex>        
