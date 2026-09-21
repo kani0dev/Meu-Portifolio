@@ -3,7 +3,7 @@ import { icons } from 'antd/es/image/PreviewGroup';
 import { Children } from 'react';
 const experiencies = [
     {
-      title: 'Init',
+      title: '',
       description: '01/01/1970',
       color:'green'
     },

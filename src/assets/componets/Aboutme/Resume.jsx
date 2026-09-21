@@ -8,7 +8,6 @@ const Resume = () =>{
     align="start"
     vertical
     >
-        <Divider size="small"/>
         <Typography>
             <Title level={5}> 
                 sobre min

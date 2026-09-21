@@ -8,6 +8,7 @@ export default function LanguagesBTNS({ onLangClick }) {
             <Button 
             color="primary"
             variant="solid"
+            size="large"
             key={lang} 
             onClick={
                 () => onLangClick(lang)

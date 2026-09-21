@@ -1,18 +1,13 @@
 
 import './App.css'
 import { useState, useEffect, useMemo } from 'react';
-import { ConfigProvider, theme as antdTheme, Typography, Card, Flex, Row, Col, List, Button } from 'antd';
+import { ConfigProvider, theme as antdTheme, Typography, Card, Flex, Row, Col, List, Button, Divider } from 'antd';
 import { MoonOutlined, SunOutlined } from '@ant-design/icons';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
 import ExperiencieSection from './assets/componets/extras/experiencie.jsx';
 
 function App() {
-const courses = [ 
-  'Foundadations of Cybersecurity - google - coursera',
-  'Google Cloud Computing Foundations - google - coursera'
-]
-
 const [isDark, setIsDark] = useState(() => {
   try {
     return localStorage.getItem('theme') !== 'light';
@@ -57,32 +52,19 @@ const algorithm = useMemo(
           <Flex
            vertical
            align='center'
-           justify='center'
+           justify='stretch'
            >
-      
             <Aboutme/>
-      
+            <Divider/>
             <ProjectLangContainer/>
-
-                <ExperiencieSection/>
-
-              <Card
-                title="Cursos"
+            <Divider orientation='start' >
+              <Typography.Text
+              strong
               >
-                <List
-                  bordered
-                  dataSource={courses}
-                  renderItem={(item)=>(
-                  <List.Item>
-                    <Typography.Text>
-                      {item}
-                    </Typography.Text>
-                  </List.Item>
-                  )}
-                />
-              </Card>
-
-
+                Experiencias
+              </Typography.Text>
+            </Divider>
+            <ExperiencieSection/>
           </Flex>
         </Col>
       <Col span={3}/>
