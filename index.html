@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kani0dev</title>
-    <script type="module" crossorigin src="/Meu-Portifolio/assets/index-DXQgnmKr.js"></script>
+    <script>
+      (function () {
+        var dark = true;
+        try { dark = localStorage.getItem('theme') !== 'light'; } catch (e) {}
+        document.documentElement.style.backgroundColor = dark ? '#000000' : '#ffffff';
+      })();
+    </script>
+    <script type="module" crossorigin src="/Meu-Portifolio/assets/index-Csrqfkif.js"></script>
     <link rel="stylesheet" crossorigin href="/Meu-Portifolio/assets/index-CxihGprn.css">
   </head>
   <body>
