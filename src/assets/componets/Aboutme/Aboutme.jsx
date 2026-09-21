@@ -15,11 +15,10 @@ const Aboutme = () => {
   return (
     <Flex
     vertical
-    align='center'
+    align='start'
     >
         <Title
         level={1}
-        style={{ marginbottom: 0 }}
         >
         Allan Chagas | kani0dev
         </Title>

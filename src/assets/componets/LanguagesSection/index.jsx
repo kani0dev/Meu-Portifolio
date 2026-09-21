@@ -1,4 +1,4 @@
-import { Flex } from "antd"
+import { Flex, Space } from "antd"
 import LanguagesBTNS from "./btn/LinguagemsBTN"
 import CriarLanguagesModal from "./modal/LanguagesModal"
 import { useState } from "react";
@@ -8,17 +8,21 @@ const  ProjectLangContainer = () =>{
     const [selectedLang, setSelectedLang] = useState(null);
     return (
         <Flex
+        align="center"
+        vertical
         >
-            <LanguagesBTNS 
-            onLangClick={setSelectedLang} 
-            />
-                {selectedLang && 
-                (
-                    <CriarLanguagesModal
-                    lang={selectedLang} 
-                    onClose={() => setSelectedLang(null)}
-                    />
-                )}
+            <Space>
+                <LanguagesBTNS 
+                onLangClick={setSelectedLang} 
+                />
+                    {selectedLang && 
+                    (
+                        <CriarLanguagesModal
+                        lang={selectedLang} 
+                        onClose={() => setSelectedLang(null)}
+                        />
+                    )}
+            </Space>
           </Flex>
     );
 }

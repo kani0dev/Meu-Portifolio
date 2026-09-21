@@ -18,7 +18,6 @@ export default function CriarLanguagesModal({ lang, onClose }) {
       onCancel={onClose}
       footer={null}
       centered
-      width={700}
       destroyOnHidden // Limpa o estado ao fechar
       title={
         <Title level={3} style={{ margin: 0 }}>

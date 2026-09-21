@@ -32,20 +32,15 @@ export default function InfoSection() {
 
       <Flex 
       vertical
-      gap={8}
+      gap={12}
       >
       {infos.map(({ label, value, href }) => (
           <Flex 
           key={label}
           gap={12}
-          align="baseline"
           justify='space-between'
           >
-            <Text style={{ 
-              minWidth: 90,
-              fontSize: 13,
-              color: '#6b7280'
-              }}>
+            <Text>
                 {label}
             </Text>
 
