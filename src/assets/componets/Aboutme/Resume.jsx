@@ -8,10 +8,17 @@ const Resume = () =>{
     align="start"
     vertical
     >
-        <Typography>
-            <Title level={5}> 
+        <Divider 
+        orientation="start">
+            <Text
+            strong
+            style={{color:"#6b7280"}}
+            > 
                 sobre min
-            </Title>
+            </Text>
+        </Divider>
+
+        <Typography>
             <Paragraph>
 
             </Paragraph>
