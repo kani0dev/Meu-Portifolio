@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Typography, Divider, Space, Card, Flex } from 'antd';
+import { Typography, Divider, Space, Card, Flex, Image } from 'antd';
 import { 
   RocketOutlined, 
   CodeOutlined, 
@@ -14,16 +14,29 @@ const { Title, Paragraph, Text } = Typography;
 const Aboutme = () => {
   return (
     <Flex
+    gap={12}
+    style={{width:'100%'}}
+    justify='center'
     vertical
-    align='start'
-    >
-        <Title
-        level={1}
-        >
-        Allan Chagas | kani0dev
-        </Title>
+      >
+          <Flex
+            gap={12}
+            justify='space-between'
+          >
+            <Title
+            level={2}
+            >
+            Allan Chagas | kani0dev
 
-        <InfoSection/>
+            </Title>
+            <Image
+            preview={false}
+            width={100}
+            src='./popotifolio.png'
+            />
+          </Flex>
+
+          <InfoSection/>
     </Flex>
   );
 };

@@ -1,31 +1,46 @@
-import { Card, Flex, Space } from "antd"
+import { Card, Divider, Flex, Space } from "antd"
 import LanguagesBTNS from "./btn/LinguagemsBTN"
 import CriarLanguagesModal from "./modal/LanguagesModal"
 import { useState } from "react";
+import CoursesSection from "../extras/courses";
 const  ProjectLangContainer = () =>{
     const [selectedLang, setSelectedLang] = useState(null);
     return (
-        <Card
-        type="inner"
-        title="meus projetos"
-        variant="outlined"
-        >   
+        <Space
+        >
+
             <Flex
-            justify="space-evenly"
-            wrap
+            justify="center"
+            vertical
             >
-                <LanguagesBTNS 
-                onLangClick={setSelectedLang} 
-                />
-                    {selectedLang && 
-                    (
-                        <CriarLanguagesModal
-                        lang={selectedLang} 
-                        onClose={() => setSelectedLang(null)}
-                        />
-                    )}
+                <Divider
+                orientation="start"
+                size="large"
+                > 
+                    Projetos por linguages
+                </Divider>
+                <Flex
+                gap={12}
+                align="start"
+                wrap
+                style={
+                    {width:'90%'}
+                }
+                >
+                    <LanguagesBTNS 
+                    onLangClick={setSelectedLang} 
+                    />
+                        {selectedLang && 
+                        (
+                            <CriarLanguagesModal
+                            lang={selectedLang} 
+                            onClose={() => setSelectedLang(null)}
+                            />
+                        )}
+                </Flex>
             </Flex>
-        </Card>
+            <CoursesSection/>
+        </Space>
     );
 }
 export default ProjectLangContainer

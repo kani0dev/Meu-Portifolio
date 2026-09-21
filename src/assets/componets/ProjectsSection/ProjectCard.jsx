@@ -1,10 +1,12 @@
-import { Card, Flex, Typography, Tag, Space } from "antd";
+import { Card, Flex, Typography, Tag, Space, theme } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 import Link from "antd/es/typography/Link.js";
 
 const { Text, Paragraph } = Typography;
 
 export default function ProjectCard({ projeto, onClick }) {
+  const { token } = theme.useToken();
+
   return (
     <Card
       hoverable
@@ -17,7 +19,7 @@ export default function ProjectCard({ projeto, onClick }) {
             strong
             style={{
               fontSize: "18px",
-              borderBottom: "1px solid #f0f0f0",
+              borderBottom: `1px solid ${token.colorBorderSecondary}`,
               width: "100%",
               marginBottom: "8px",
             }}

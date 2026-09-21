@@ -18,17 +18,17 @@ export default function InfoSection() {
     <Flex
     vertical
     >
+      <Divider
+      orientation='start'
+      >
         <Text
         style={{
-          fontSize: 11,
-          fontWeight: 600,
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
           color: '#6b7280',
         }}
-      >
-        Informações 
-      </Text>
+        >
+          Infromações  
+        </Text>
+      </Divider>
 
       <Flex 
       vertical
