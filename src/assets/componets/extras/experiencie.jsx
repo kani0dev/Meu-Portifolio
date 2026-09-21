@@ -3,19 +3,24 @@ import { icons } from 'antd/es/image/PreviewGroup';
 import { Children } from 'react';
 const experiencies = [
     {
-      title: '',
-      description: '01/01/1970',
-      color:'green'
+      title: 'inicio - Fatec itaquera - DSM',
+      description: '24/02/2023',
     },
     {
-      title: 'Init',
+      title: 'primeiro hackton - experimenta guarulhos',
       description: '01/01/1970',
-      color:'green'
     },
     {
-      title: 'Init',
+      title: '3 lugar - hackthon 3Ejuv',
       description: '01/01/1970',
-      color:'green'
+    },
+    {
+      title: 'iniciaçao cientifica - fatec itaquera - prof Claudia Courtouke',
+      description: '01/01/1970',
+    },
+    {
+      title: 'organização primeiro hackathon fatec itaquera',
+      description: '01/01/1970',
     },
   ]
 
