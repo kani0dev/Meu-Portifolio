@@ -1,17 +1,19 @@
-import { Flex, Space } from "antd"
+import { Card, Flex, Space } from "antd"
 import LanguagesBTNS from "./btn/LinguagemsBTN"
 import CriarLanguagesModal from "./modal/LanguagesModal"
 import { useState } from "react";
-import Title from "antd/es/skeleton/Title";
-
 const  ProjectLangContainer = () =>{
     const [selectedLang, setSelectedLang] = useState(null);
     return (
-        <Flex
-        align="center"
-        vertical
-        >
-            <Space>
+        <Card
+        type="inner"
+        title="meus projetos"
+        variant="outlined"
+        >   
+            <Flex
+            justify="space-evenly"
+            wrap
+            >
                 <LanguagesBTNS 
                 onLangClick={setSelectedLang} 
                 />
@@ -22,8 +24,8 @@ const  ProjectLangContainer = () =>{
                         onClose={() => setSelectedLang(null)}
                         />
                     )}
-            </Space>
-          </Flex>
+            </Flex>
+        </Card>
     );
 }
 export default ProjectLangContainer

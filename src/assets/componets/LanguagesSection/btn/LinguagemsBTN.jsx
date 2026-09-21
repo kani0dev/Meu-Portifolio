@@ -5,7 +5,13 @@ export default function LanguagesBTNS({ onLangClick }) {
     const linguaguems = getUniqLanguages()
     return (
         linguaguems.map(lang => (
-            <Button key={lang} onClick={() => onLangClick(lang)}>
+            <Button 
+            color="primary"
+            variant="solid"
+            key={lang} 
+            onClick={
+                () => onLangClick(lang)
+            }>
                 {lang}
             </Button>
         ))

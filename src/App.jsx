@@ -26,9 +26,6 @@ function App() {
       >
         <Aboutme/>
         
-        <Title level={5}>
-          meus projetos
-        </Title>
         <ProjectLangContainer/>
       </Flex>
     </Col>
