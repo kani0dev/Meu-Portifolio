@@ -23,8 +23,6 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Configure git user
-      # passando o bot, pois passando meu user e email do git 
-      # eu teria que passar meu token tb... e nao to afin.
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
