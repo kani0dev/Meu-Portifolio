@@ -20,7 +20,8 @@ const Resume = () =>{
 
         <Typography>
             <Paragraph>
-
+                Do simple singular software that work well togheter, 
+                everybody can create complex solutions, to complex problems, but only a genius is the one who find simple solutions to complex problems.
             </Paragraph>
         </Typography>
     </Flex>        
