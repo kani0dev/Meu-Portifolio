@@ -1,14 +1,9 @@
 
 import './App.css'
-import LanguagesBTNS from "./assets/componets/LanguagesSection/btn/LinguagemsBTN.jsx";
-import CriarLanguagesModal from './assets/componets/LanguagesSection/modal/LanguagesModal.jsx';
-import { Typography, Divider, Space, Card, Flex, Row, Col, List } from 'antd';
+import { Typography,  Card, Flex, Row, Col, List, Timeline } from 'antd';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
-import ProjectCard from './assets/componets/ProjectsSection/ProjectCard.jsx';
-
-const { Title, Paragraph, Text } = Typography;
-
+import ExperiencieSection from './assets/componets/extras/experiencie.jsx';
 function App() {
 const courses = [ 
   'Foundadations of Cybersecurity - google - coursera',
@@ -16,18 +11,21 @@ const courses = [
 ]
  return (
   <Row align="middle">
-    <Col span={6}/>
-      <Col span={12}>
-        <Flex vertical>
+    <Col span={3}/>
+      <Col span={18
+      }>
+
+        <Flex
+         vertical
+         align='center'
+         justify='center'
+         >
     
           <Aboutme/>
     
           <ProjectLangContainer/>
 
-            <Card
-              title="Experiencias"
-            >          
-            </Card>
+              <ExperiencieSection/>
 
             <Card
               title="Cursos"
@@ -48,7 +46,7 @@ const courses = [
 
         </Flex>
       </Col>
-    <Col span={6}/>
+    <Col span={3}/>
   </Row>
   );
 }; 
