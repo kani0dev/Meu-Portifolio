@@ -10,14 +10,14 @@ const Projects = [
     "framework": ["Spring Boot", "React", "Redux.js", "PostgreSQL", "AWS", "Docker", "DevOps"]
   },
   {
-    "name": "CRM de Leads & Inteligência IoT Imobiliária",
+    "name": "Telemtria imobiliaria com IoT ",
     "description": "Plataforma de gestão de leads para cliente real com dois ecossistemas chave: um pipeline de análise preditiva de mensagens de clientes para geração de insights ao corretor, e um sistema embarcado IoT para monitoramento e envio de dados telemétricos dos imóveis em tempo real.",
     "repoLink": "",
     "url": null,
     "cover": null,
     "featured": true,
-    "languagues": ["Python", "R", "PHP", "Kotlin", "C++", "JavaScript", "SQL"],
-    "framework": ["FastAPI", "Spring Boot", "Mosquitto MQTT", "React", "PostgreSQL", "Docker"]
+    "languagues": ["C++", "Python"],
+    "framework": [ "Mosquitto MQTT", "PlataformIO"]
   },
   {
     "name": "Sistema de Gestão de Ordens de Serviço",
