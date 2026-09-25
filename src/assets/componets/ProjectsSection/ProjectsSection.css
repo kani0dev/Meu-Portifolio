@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------------
+   ProjectsSection - carousel
+
+   Ajustes que o antd não oferece pronto, os dois pontos são
+   consequência do `adaptiveHeight` (altura automática).
+
+   1. O antd aplica `height: 100%` em `.slick-slide`. O slick mede o slide
+      com `offsetHeight` para definir a altura da lista, então com 100% a
+      medição fica presa no valor atual e a caixa nunca cresce para caber
+      um projeto mais alto. Zerando para `auto`, cada slide volta a medir
+      a altura real do seu conteúdo.
+   2. A transição de `height` é para a troca entre slides não ser um pulo
+      seco, já que a altura agora é conteúdo-dependente.
+------------------------------------------------------------------- */
+
+.projetos-carousel .slick-list {
+  transition: height 300ms ease;
+}
+
+.projetos-carousel .slick-list > .slick-track > .slick-slide {
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projetos-carousel .slick-list {
+    transition: none;
+  }
+}
