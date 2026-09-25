@@ -1,12 +1,12 @@
-import { getProjectByLanguage } from "/public/projectsMOKUP.js";
+import { getProjectByLanguage } from "../../../../data/projects.js";
 import "./Style.css";
 
-import { Modal, List, Typography } from "antd";
-import ProjectCard from "../../ProjectsSection/ProjectCard.jsx";
+import { Modal, Typography } from "antd";
+import LanguageProjectsContainer from "../card/LanguageProjectsContainer.jsx";
 import ProjectDetailsModal from "../../ProjectsSection/ProjectDetailsModal.jsx";
 import { useState } from "react";
 
-const { Text, Title } = Typography;
+const { Title } = Typography;
 
 export default function CriarLanguagesModal({ lang, onClose }) {
     const projetos = getProjectByLanguage(lang);
@@ -25,14 +25,10 @@ export default function CriarLanguagesModal({ lang, onClose }) {
         </Title>
       }
     >
-      <List
-        dataSource={projetos}
-        locale={{ emptyText: <Text>Nenhum projeto encontrado para {lang}.</Text> }}
-        renderItem={(proj) => (
-          <List.Item style={{ padding: "12px 0" }}>
-            <ProjectCard projeto={proj} onClick={setProjetoSelecionado} />
-          </List.Item>
-        )}
+      <LanguageProjectsContainer
+        projetos={projetos}
+        lang={lang}
+        onSelect={setProjetoSelecionado}
       />
 
       <ProjectDetailsModal

@@ -1,5 +1,4 @@
 import { Typography, Badge, Flex, Space, Divider } from 'antd';
-import Resume from './Resume';
 
 
 const { Text, Link } = Typography;
@@ -57,9 +56,6 @@ export default function InfoSection() {
           </Flex>
         ))}
       </Flex>
-        
-      <Resume/>
- 
     </Flex>
   );
 }

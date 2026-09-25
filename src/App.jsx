@@ -6,6 +6,7 @@ import { MoonOutlined, SunOutlined } from '@ant-design/icons';
 import Aboutme from './assets/componets/Aboutme/Aboutme.jsx';
 import ProjectLangContainer from './assets/componets/LanguagesSection/index.jsx';
 import ExperiencieSection from './assets/componets/extras/experiencie.jsx';
+import ProjectsSection from './assets/componets/ProjectsSection/index.jsx';
 
 function App() {
 const [isDark, setIsDark] = useState(() => {
@@ -55,15 +56,17 @@ const algorithm = useMemo(
            justify='stretch'
            >
             <Aboutme/>
+
+            <ProjectsSection/>
+
             <Divider/>
+            
             <ProjectLangContainer/>
+            
             <Divider orientation='start' >
-              <Typography.Text
-              strong
-              >
-                Experiencias
-              </Typography.Text>
+              <Typography.Text strong> Experiencias </Typography.Text>
             </Divider>
+            
             <ExperiencieSection/>
           </Flex>
         </Col>

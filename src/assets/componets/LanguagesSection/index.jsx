@@ -1,46 +1,51 @@
-import { Card, Divider, Flex, Space } from "antd"
+import { Flex, List, Typography, theme } from "antd"
 import LanguagesBTNS from "./btn/LinguagemsBTN"
 import CriarLanguagesModal from "./modal/LanguagesModal"
 import { useState } from "react";
 import CoursesSection from "../extras/courses";
-const  ProjectLangContainer = () =>{
-    const [selectedLang, setSelectedLang] = useState(null);
-    return (
-        <Space
-        >
 
-            <Flex
-            justify="center"
-            vertical
+const { Text } = Typography;
+
+const ProjectLangContainer = () =>{
+    const { token } = theme.useToken();
+    const [selectedLang, setSelectedLang] = useState(null);
+
+    return (
+        <Flex
+        justify="center"
+        gap="middle"
+        style={{ width: '100%' }}
+        >
+            {/* Mesmo componente e mesmos props da lista de cursos (List + header
+                + bordered), só que com os botões em grade quebrando linha em
+                vez de um item por linha. O padding é o mesmo do List.Item
+                (paddingMD/paddingLG) para os dois contornos ficarem iguais. */}
+            <List
+            bordered
+            header={<Text strong>Linguagens</Text>}
             >
-                <Divider
-                orientation="start"
-                size="large"
-                > 
-                    Projetos por linguages
-                </Divider>
                 <Flex
                 gap={12}
-                align="start"
                 wrap
-                style={
-                    {width:'90%'}
-                }
+                justify="center"
+                style={{ padding: `${token.paddingMD}px ${token.paddingLG}px` }}
                 >
-                    <LanguagesBTNS 
-                    onLangClick={setSelectedLang} 
+                    <LanguagesBTNS
+                    onLangClick={setSelectedLang}
                     />
-                        {selectedLang && 
-                        (
-                            <CriarLanguagesModal
-                            lang={selectedLang} 
-                            onClose={() => setSelectedLang(null)}
-                            />
-                        )}
                 </Flex>
-            </Flex>
+            </List>
+
+            {selectedLang &&
+            (
+                <CriarLanguagesModal
+                lang={selectedLang}
+                onClose={() => setSelectedLang(null)}
+                />
+            )}
+
             <CoursesSection/>
-        </Space>
+        </Flex>
     );
 }
 export default ProjectLangContainer

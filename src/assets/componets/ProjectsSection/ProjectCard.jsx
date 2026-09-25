@@ -1,54 +1,124 @@
-import { Card, Flex, Typography, Tag, Space, theme } from "antd";
-import { GithubOutlined } from "@ant-design/icons";
-import Link from "antd/es/typography/Link.js";
+import {
+  Button,
+  Card,
+  Flex,
+  Grid,
+  Space,
+  Tag,
+  Typography,
+  theme,
+} from "antd";
+import { ExportOutlined, GithubOutlined, PictureOutlined } from "@ant-design/icons";
 
-const { Text, Paragraph } = Typography;
+const { Text, Paragraph, Link } = Typography;
 
-export default function ProjectCard({ projeto, onClick }) {
+const COVER_HEIGHT = 130;
+
+export default function ProjectCard({ projeto }) {
   const { token } = theme.useToken();
+  const screens = Grid.useBreakpoint();
+  const isMobile = !screens.md;
+
+  const { name, description, cover, repoLink, url, languagues, framework } = projeto;
 
   return (
     <Card
       hoverable
-      onClick={() => onClick?.(projeto)}
-      style={{ width: "100%", borderRadius: "8px" }}
+      style={{ width: "100%", borderRadius: 8 }}
+      styles={{ body: { padding: token.paddingSM } }}
     >
-      <Flex vertical gap="small">
-        <Flex justify="space-between" align="center">
-          <Text
-            strong
+      <Flex gap="middle" vertical={isMobile}>
+        <div style={{ flex: isMobile ? "none" : "0 0 200px" }}>
+          {cover ? (
+            <img
+              src={cover}
+              alt={name}
+              loading="lazy"
+              style={{
+                width: "100%",
+                height: COVER_HEIGHT,
+                objectFit: "cover",
+                borderRadius: 6,
+                display: "block",
+              }}
+            />
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                height: COVER_HEIGHT,
+                display: "grid",
+                placeItems: "center",
+                background: token.colorFillQuaternary,
+                border: `1px dashed ${token.colorBorder}`,
+                borderRadius: 6,
+              }}
+            >
+              <PictureOutlined
+                style={{ fontSize: 28, color: token.colorTextQuaternary }}
+              />
+            </div>
+          )}
+        </div>
+
+        <Flex vertical gap="small" style={{ flex: 1, minWidth: 0 }}>
+          <Flex
+            justify="space-between"
+            align="center"
+            gap="small"
             style={{
-              fontSize: "18px",
               borderBottom: `1px solid ${token.colorBorderSecondary}`,
-              width: "100%",
-              marginBottom: "8px",
+              paddingBottom: 8,
             }}
           >
-            {projeto.name}
-          </Text>
-          {projeto.repoLink && (
-            <Link href={projeto.repoLink} target="_blank" onClick={(e) => e.stopPropagation()}>
-              <GithubOutlined style={{ fontSize: "22px", marginLeft: "12px" }} />
-            </Link>
+            <Text strong style={{ fontSize: 18 }}>
+              {name}
+            </Text>
+            {repoLink && (
+              <Link
+                href={repoLink}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Código de ${name}`}
+              >
+                <GithubOutlined style={{ fontSize: 22 }} />
+              </Link>
+            )}
+          </Flex>
+
+          {/* Sem ellipsis: a altura do carousel é automática, então cortar o
+              texto esconderia informação sem haver como expandir. */}
+          <Paragraph type="secondary" style={{ marginBottom: 0 }}>
+            {description}
+          </Paragraph>
+
+          <Space size={[0, 8]} wrap>
+            {languagues?.map((l) => (
+              <Tag color="processing" key={l} bordered={false}>
+                {l}
+              </Tag>
+            ))}
+            {framework?.map((f) => (
+              <Tag color="success" key={f} bordered={false}>
+                {f}
+              </Tag>
+            ))}
+          </Space>
+
+          {url && (
+            <div>
+              <Button
+                type="primary"
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                icon={<ExportOutlined />}
+              >
+                Ver detalhes
+              </Button>
+            </div>
           )}
         </Flex>
-
-        <Paragraph type="secondary" ellipsis={{ rows: 2 }}>
-          {projeto.description}
-        </Paragraph>
-
-        <Space size={[0, 8]} wrap>
-          {projeto.languagues?.map((l) => (
-            <Tag color="processing" key={l} bordered={false}>
-              {l}
-            </Tag>
-          ))}
-          {projeto.framework?.map((f) => (
-            <Tag color="success" key={f} bordered={false}>
-              {f}
-            </Tag>
-          ))}
-        </Space>
       </Flex>
     </Card>
   );
