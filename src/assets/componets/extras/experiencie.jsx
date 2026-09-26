@@ -8,25 +8,24 @@ const experiencies = [
     },
     {
       title: 'primeiro hackton - experimenta guarulhos',
-      description: '01/01/1970',
     },
     {
       title: '3 lugar - hackthon 3Ejuv',
-      description: '01/01/1970',
     },
     {
       title: 'iniciaçao cientifica - fatec itaquera - prof Claudia Courtouke',
-      description: '01/01/1970',
+      description: '11/08/2026',
     },
     {
       title: 'organização primeiro hackathon fatec itaquera',
-      description: '01/01/1970',
+      description: '26/09/2026',
     },
   ]
 
 const ExperiencieSection = () => (
         <Steps
         progressDot
+        labelPlacement='vertical'
         current={experiencies.length-1}
             items={experiencies}
         />
