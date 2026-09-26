@@ -1,18 +1,11 @@
 const Projects = [
   {
-    "name": "CRM de Leads Imobiliários",
-    "description": "Sistema de alta performance para conversão de leads e geração de insights para corretores. Atuei como desenvolvedor Full Stack 'curinga', sendo responsável pela integração crítica com a API da OLX e arquitetura de dados entre o front e o back-end.",
-    "repoLink": "",
-    "url": null,
-    "cover": null,
-    "featured": true,
-    "languagues": ["Java", "JavaScript", "SQL"],
-    "framework": ["Spring Boot", "React", "Redux.js", "PostgreSQL", "AWS", "Docker", "DevOps"]
-  },
-  {
-    "name": "Telemtria imobiliaria com IoT ",
-    "description": "Plataforma de gestão de leads para cliente real com dois ecossistemas chave: um pipeline de análise preditiva de mensagens de clientes para geração de insights ao corretor, e um sistema embarcado IoT para monitoramento e envio de dados telemétricos dos imóveis em tempo real.",
-    "repoLink": "",
+    "name": "100tadin,Telemtria imobiliaria com IoT ",
+    "description":
+      "A partir de um desafio técnico do sexto semestre, desenvolvemos o 100tadin, um serviço IoT integrado ao nosso CRM imobiliário para monitorar e simular a experiência de viver em um imóvel.\n"
+      +"A solução coleta dados em tempo real e os transforma em informações que podem ser utilizadas como argumentos comerciais na conversão de leads.\n"
+      + "O resultado foi um sistema flexível e de fácil integração, capaz de conectar telemetria de imóveis ao processo comercial e transformar dados do ambiente em informações úteis para vendas.",
+    "repoLink": "https://github.com/kani0dev/100tadin",
     "url": null,
     "cover": null,
     "featured": true,
@@ -20,29 +13,65 @@ const Projects = [
     "framework": [ "Mosquitto MQTT", "PlataformIO"]
   },
   {
-    "name": "Sistema de Gestão de Ordens de Serviço",
-    "description": "Sistema full-stack completo para controle e gerenciamento de ordens de serviço voltado para assistências técnicas. Conta com rotas protegidas por autenticação, controle de status de atendimento, migração de banco de dados e interface reativa.",
-    "repoLink": "",
+    "name":"Insights de Leads Imobiliarias",
+    "description":
+      "Um lead representa um sinal de interesse de um cliente em um produto. Durante o desenvolvimento do nosso CRM, surgiu a necessidade de estimar o nível de interesse de cada lead.\n"
+      + "A partir desse objetivo, desenvolvi um sistema de classificação de leads utilizando modelos de Machine Learning e NLP para estimar o nível de interesse de cada lead em um valor mensurável.\n"
+      + "Como resultado, criamos uma métrica de interesse que permite identificar e priorizar leads com maior probabilidade estimada de conversão, utilizando dados e modelos preditivos como apoio à estratégia comercial."
+    ,
     "url": null,
     "cover": null,
     "featured": true,
-    "languagues": ["Java", "JavaScript", "SQL"],
-    "framework": ["Spring Boot", "Spring Security", "Spring Data JPA", "Flyway", "React", "PostgreSQL"]
+    "languagues": ["Python"],
+    "framework": ["FastAPI","SQLAlchemy","Alembic","SciKitLearn"]
   },
   {
-    "name": "E-Commerce para Artista de Camisetas",
-    "description": "Plataforma e-commerce voltada para exibição de catálogo de arte e venda de produtos personalizados. Focado em proporcionar uma experiência fluida de navegação e gerenciamento de carrinho no front-end.",
-    "repoLink": "",
+    "name":"Quiz2llm",
+    "description":
+      "Desenvolvi esta aplicação como um laboratório para estudar recuperação de contexto, microsserviços distribuídos e mensageria." +
+      " A partir de uma aplicação simples de quizzes, explorei como distribuir responsabilidades entre diferentes serviços e como utilizar comunicação assíncrona para coordenar os fluxos da aplicação." +
+
+      " O resultado foi uma aplicação funcional utilizada para experimentar, na prática, os desafios e trade-offs de uma arquitetura distribuída, incluindo comunicação entre serviços, processamento de mensagens e recuperação de contexto.", 
+    "repoLink":"https://github.com/quiz2llm/ActorsAPI", 
+    "url":null ,
+    "cover": null,
+    "featured": true,
+    "languagues": ["Python","JavsScript","React"],
+    "framework": [
+      "FastAPI","SQLAlchemy","Alembic","SciKitLearn","ReactJS","Ant-Design"
+    ]
+  },
+  {
+    "name":"S.H.Ia",
+    "description":
+     "Desenvolvi esta aplicação como um laboratório para estudar métodos de classificação e recomendação de perfis, utilizando uma rede social como ambiente para experimentar esses conceitos." +
+
+        " A aplicação foi construída utilizando Java e Spring, permitindo explorar tanto a implementação de modelos de recomendação e classificação quanto aspectos de desenvolvimento de serviços, como organização da aplicação, APIs e integração entre componentes." +
+
+        " O resultado foi uma aplicação funcional que serviu como ambiente de experimentação para diferentes estratégias de classificação e recomendação, além de aprofundar minha experiência no desenvolvimento de serviços utilizando o ecossistema Java e Spring."
+    ,
     "url": null,
     "cover": null,
     "featured": true,
-    "languagues": ["JavaScript", "HTML", "CSS"],
-    "framework": ["React", "Vite", "Tailwind CSS", "Context API"]
-  }
+    "languagues": ["Java","Python"],
+    "framework": ["SpringBoot","SpringSecurity","FastAPI"]
+  },
+ 
 ];
+/*
+  {
+    "name":"",
+    "description":"",
+    "url": null,
+    "cover": null,
+    "featured": true,
+    "languagues": [],
+    "framework": [ ]
+  },
+*/
 
-export function getUniqLanguages() {
-  const linguagensUnicas = new Set();
+    export function getUniqLanguages() {
+      const linguagensUnicas = new Set();
   Projects.forEach(projeto => {
     projeto.languagues.forEach(linguagem => {
       linguagensUnicas.add(linguagem);
