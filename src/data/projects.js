@@ -1,6 +1,6 @@
 const Projects = [
   {
-    "name": "100tadin,Telemtria imobiliaria com IoT ",
+    "name": "100tadin",
     "description":
       "A partir de um desafio técnico do sexto semestre, desenvolvemos o 100tadin, um serviço IoT integrado ao nosso CRM imobiliário para monitorar e simular a experiência de viver em um imóvel.\n"
       +"A solução coleta dados em tempo real e os transforma em informações que podem ser utilizadas como argumentos comerciais na conversão de leads.\n"
@@ -10,7 +10,11 @@ const Projects = [
     "cover": null,
     "featured": true,
     "languagues": ["C++", "Python"],
-    "framework": [ "Mosquitto MQTT", "PlataformIO"]
+    "framework": [ "Mosquitto MQTT", "PlataformIO"],
+    "prints": [
+      "prints/100tadin/1.png",
+      "prints/100tadin/2.png"
+    ]
   },
   {
     "name":"Insights de Leads Imobiliarias",
