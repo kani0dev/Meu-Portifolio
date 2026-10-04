@@ -14,17 +14,28 @@ const { Text, Paragraph, Link } = Typography;
 
 const COVER_HEIGHT = 130;
 
-export default function ProjectCard({ projeto }) {
+export default function ProjectCard({ projeto, onClick }) {
   const { token } = theme.useToken();
   const screens = Grid.useBreakpoint();
   const isMobile = !screens.md;
 
   const { name, description, cover, repoLink, url, languagues, framework } = projeto;
 
+  const abrirDetalhes = () => onClick?.(projeto);
+
   return (
     <Card
       hoverable
-      style={{ width: "100%", borderRadius: 8 }}
+      onClick={abrirDetalhes}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={(e) => {
+        if (onClick && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          abrirDetalhes();
+        }
+      }}
+      style={{ width: "100%", borderRadius: 8, cursor: onClick ? "pointer" : "default" }}
       styles={{ body: { padding: token.paddingSM } }}
     >
       <Flex gap="middle" vertical={isMobile}>
@@ -80,6 +91,7 @@ export default function ProjectCard({ projeto }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Código de ${name}`}
+                onClick={(e) => e.stopPropagation()}
               >
                 <GithubOutlined style={{ fontSize: 22 }} />
               </Link>
@@ -113,6 +125,7 @@ export default function ProjectCard({ projeto }) {
                 target="_blank"
                 rel="noreferrer"
                 icon={<ExportOutlined />}
+                onClick={(e) => e.stopPropagation()}
               >
                 Ver detalhes
               </Button>

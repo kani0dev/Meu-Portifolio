@@ -26,3 +26,16 @@
     transition: none;
   }
 }
+
+
+/* ------------------------------------------------------------------
+   ProjectDetailsModal - prints carousel
+------------------------------------------------------------------- */
+.prints-carousel .slick-list {
+  transition: height 300ms ease;
+}
+
+.prints-carousel .slick-list > .slick-track > .slick-slide {
+  height: auto;
+}
+

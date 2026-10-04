@@ -32,7 +32,7 @@ const Aboutme = () => {
             <Image
             preview={false}
             width={100}
-            src='./popotifolio.png'
+            src={import.meta.env.BASE_URL + 'popotifolio.png'}
             />
           </Flex>
 

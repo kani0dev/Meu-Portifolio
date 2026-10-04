@@ -1,6 +1,6 @@
 const Projects = [
   {
-    "name": "100tadin,Telemtria imobiliaria com IoT ",
+    "name": "100tadin",
     "description":
       "A partir de um desafio técnico do sexto semestre, desenvolvemos o 100tadin, um serviço IoT integrado ao nosso CRM imobiliário para monitorar e simular a experiência de viver em um imóvel.\n"
       +"A solução coleta dados em tempo real e os transforma em informações que podem ser utilizadas como argumentos comerciais na conversão de leads.\n"
@@ -10,7 +10,11 @@ const Projects = [
     "cover": null,
     "featured": true,
     "languagues": ["C++", "Python"],
-    "framework": [ "Mosquitto MQTT", "PlataformIO"]
+    "framework": [ "Mosquitto MQTT", "PlataformIO"],
+    "prints": [
+      "prints/100tadin/1.png",
+      "prints/100tadin/2.png"
+    ]
   },
   {
     "name":"Insights de Leads Imobiliarias",
@@ -35,10 +39,13 @@ const Projects = [
     "repoLink":"https://github.com/quiz2llm/ActorsAPI", 
     "url":null ,
     "cover": null,
-    "featured": true,
-    "languagues": ["Python","JavsScript","React"],
+    "featured": false,
+    "languagues": ["Python","JavsScript"],
     "framework": [
       "FastAPI","SQLAlchemy","Alembic","SciKitLearn","ReactJS","Ant-Design"
+    ],
+    "prints": [
+      "prints/quiz2llm/1.png"
     ]
   },
   {
@@ -52,10 +59,63 @@ const Projects = [
     ,
     "url": null,
     "cover": null,
-    "featured": true,
+    "featured": false,
     "languagues": ["Java","Python"],
-    "framework": ["SpringBoot","SpringSecurity","FastAPI"]
-  },
+    "framework": ["SpringBoot","SpringSecurity","FastAPI"],
+    "prints": [
+      "prints/shia/1.png"
+    ]
+  },{
+  "name": "SafeEcoTour",
+  "description":
+    "A partir da proposta de desenvolver uma solução voltada ao turismo sustentável, criamos o SafeEcoTour, um site dedicado à apresentação de trilhas e pontos turísticos de Bertioga.\n"
+    + "A plataforma organiza informações e descrições sobre as trilhas, permitindo que visitantes conheçam melhor os locais antes de realizar seus passeios.\n"
+    + "O resultado foi um site simples e acessível, desenvolvido com tecnologias web fundamentais, que centraliza informações sobre trilhas de Bertioga e facilita o acesso dos visitantes a esse conteúdo.",
+  "repoLink": "https://github.com/LunaLeao/PI1SemestreSafeEcoTour/tree/allan",
+  "url": "https://lunaleao.github.io/PI1SemestreSafeEcoTour/cachoeira-do-elefante.html",
+  "cover": null,
+  "featured": true,
+  "languagues": ["HTML", "CSS", "JavaScript"],
+  "framework": [],
+  "prints": [
+    "prints/safeecotour/1.png",
+    "prints/safeecotour/2.png"
+  ]
+},
+{
+  "name": "PI de Pilates",
+  "description":
+    "A partir da necessidade de facilitar o gerenciamento de estúdios de pilates, desenvolvemos uma aplicação voltada à centralização e organização das principais atividades do negócio.\n"
+    + "A solução foi projetada para auxiliar no controle de alunos, agendamento de aulas, registro de presença e acompanhamento do histórico de atividades, reunindo essas informações em um único ambiente digital.\n"
+    + "O resultado foi uma plataforma desenvolvida com JavaScript e Bootstrap, buscando oferecer uma experiência intuitiva e eficiente para otimizar a rotina dos profissionais e melhorar a gestão do estúdio.",
+  "repoLink": "https://github.com/lucasfnCode/App-for-Studio-the-pilates-PI---FATEC",
+  "url": null,
+  "cover": null,
+  "featured": true,
+  "languagues": ["JavaScript"],
+  "framework": ["Bootstrap", "Parcel"],
+  "prints": [
+    "prints/pi-pilates/1.png",
+    "prints/pi-pilates/2.png"
+  ]
+},
+{
+  "name": "Visgo de Jaca",
+  "description":
+    "A partir da proposta de transformar a identidade artística e cultural da marca Visgo de Jaca em uma experiência digital, desenvolvemos uma loja online voltada à divulgação e comercialização de suas criações.\n"
+    + "A solução funciona tanto como uma vitrine para as estampas autorais da marca, inspiradas na cultura sul-americana, na capoeira, na música e na luta anticolonial, quanto como uma plataforma de vendas direta ao consumidor.\n"
+    + "O resultado foi uma experiência web que aproxima o público da identidade visual e cultural da Visgo de Jaca, permitindo apresentar suas artes e produtos em um ambiente digital próprio.",
+  "repoLink": "https://github.com/DSM2SEM2024/100esperanca",
+  "url": "https://dsm2sem2024.github.io/100esperanca/",
+  "cover": null,
+  "featured": true,
+  "languagues": ["JavaScript", "HTML", "CSS"],
+  "framework": [],
+  "prints": [
+    "prints/visgo-de-jaca/1.png",
+    "prints/visgo-de-jaca/2.png"
+  ]
+},
  
 ];
 /*
