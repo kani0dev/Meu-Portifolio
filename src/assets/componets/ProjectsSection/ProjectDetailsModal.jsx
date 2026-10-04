@@ -1,4 +1,4 @@
-import { Modal, Typography, Tag, Space, Button, Flex, Divider, Image } from "antd";
+import { Modal, Typography, Tag, Space, Button, Flex, Divider, Image, Carousel } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
 import Link from "antd/es/typography/Link.js";
 
@@ -43,18 +43,26 @@ export default function ProjectDetailsModal({ projeto, onClose }) {
         {projeto.prints?.length > 0 && (
           <Flex vertical gap="small">
             <Text strong>Capturas</Text>
-            <Image.PreviewGroup>
-              <Flex vertical gap="middle">
-                {projeto.prints.map((src, idx) => (
+            <Carousel
+              autoplay
+              autoplaySpeed={4000}
+              dots
+              arrows
+              effect="fade"
+              adaptiveHeight
+              rootClassName="prints-carousel"
+            >
+              {projeto.prints.map((src, idx) => (
+                <div key={idx}>
                   <Image
-                    key={idx}
                     src={src.startsWith('prints') ? import.meta.env.BASE_URL + src : src}
                     width="100%"
-                    style={{ borderRadius: 8 }}
+                    style={{ borderRadius: 8, objectFit: 'contain', maxHeight: '70vh' }}
+                    preview
                   />
-                ))}
-              </Flex>
-            </Image.PreviewGroup>
+                </div>
+              ))}
+            </Carousel>
           </Flex>
         )}
 
