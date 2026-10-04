@@ -1,7 +1,9 @@
 import { Carousel, Divider, Flex, Typography } from "antd";
 import ProjectCard from "./ProjectCard";
+import ProjectDetailsModal from "./ProjectDetailsModal";
 import { getFeaturedProjects } from "../../../data/projects.js";
 import "./ProjectsSection.css";
+import { useState } from "react";
 
 const { Text } = Typography;
 
@@ -10,6 +12,7 @@ const FADE_SPEED = 600;
 
 export default function ProjectsSection() {
   const featuredProjects = getFeaturedProjects();
+  const [projetoSelecionado, setProjetoSelecionado] = useState(null);
 
   if (featuredProjects.length === 0) {
     return (
@@ -47,10 +50,15 @@ export default function ProjectsSection() {
       >
         {featuredProjects.map((projeto) => (
           <div key={projeto.name}>
-            <ProjectCard projeto={projeto} />
+            <ProjectCard projeto={projeto} onClick={() => setProjetoSelecionado(projeto)} />
           </div>
         ))}
       </Carousel>
+
+      <ProjectDetailsModal
+        projeto={projetoSelecionado}
+        onClose={() => setProjetoSelecionado(null)}
+      />
     </Flex>
   );
 }

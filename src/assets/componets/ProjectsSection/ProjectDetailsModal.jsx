@@ -48,7 +48,7 @@ export default function ProjectDetailsModal({ projeto, onClose }) {
                 {projeto.prints.map((src, idx) => (
                   <Image
                     key={idx}
-                    src={src}
+                    src={src.startsWith('prints') ? import.meta.env.BASE_URL + src : src}
                     width="100%"
                     style={{ borderRadius: 8 }}
                   />
